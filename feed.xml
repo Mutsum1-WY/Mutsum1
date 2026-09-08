@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Rain Pages · RSS 2.0 订阅源
+  ============================================================
+  站点根地址：https://mutsum1-wy.github.io/Mutsum1/
+  若之后绑定了自定义域名或换了仓库，请把本文件里所有
+  https://mutsum1-wy.github.io/Mutsum1/ 替换为新地址。
+
+  新增文章时：
+  1. 在下面 <item> 列表中补一条（最新的放最上面）；
+  2. 更新 <lastBuildDate>；
+  3. pubDate 用 RFC 822 格式，例如：Wed, 09 Sep 2026 00:00:00 +0800。
+  ============================================================
+-->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rain Pages</title>
+    <link>https://mutsum1-wy.github.io/Mutsum1/</link>
+    <description>Mutsum1 的个人文章归档 · PERSONAL ARCHIVE</description>
+    <language>zh-CN</language>
+    <copyright>Mutsum1</copyright>
+    <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://mutsum1-wy.github.io/Mutsum1/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>随笔2</title>
+      <link>https://mutsum1-wy.github.io/Mutsum1/2026/%E9%9A%8F%E7%AC%942/index.html</link>
+      <guid isPermaLink="true">https://mutsum1-wy.github.io/Mutsum1/2026/%E9%9A%8F%E7%AC%942/index.html</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0800</pubDate>
+      <description>学习</description>
+    </item>
+
+    <item>
+      <title>随笔1</title>
+      <link>https://mutsum1-wy.github.io/Mutsum1/2026/%E9%9A%8F%E7%AC%941/index.html</link>
+      <guid isPermaLink="true">https://mutsum1-wy.github.io/Mutsum1/2026/%E9%9A%8F%E7%AC%941/index.html</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0800</pubDate>
+      <description>我在干什么</description>
+    </item>
+
+    <item>
+      <title>For You</title>
+      <link>https://mutsum1-wy.github.io/Mutsum1/2026/For%20You/index.html</link>
+      <guid isPermaLink="true">https://mutsum1-wy.github.io/Mutsum1/2026/For%20You/index.html</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0800</pubDate>
+      <description>关于这个网站的一切，它的由来、建造过程以及作用</description>
+    </item>
+  </channel>
+</rss>
