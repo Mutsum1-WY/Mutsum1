@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="随笔2 · Rain Pages 个人文章" />
+  <title>随笔2 · Rain Pages</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfdbfe'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23g)'%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(7 13) scale(.62)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(56 55) scale(.42)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(68 18) scale(.26)'/%3E%3C/g%3E%3Cellipse cx='30' cy='46' rx='4.5' ry='7' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --ink: #0f1b2d;
+      --muted: #64748b;
+      --faint: #9aa7b8;
+      --line: #e5eaf2;
+      --accent: #1e3a8a;
+      --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      --serif: Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
+      --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    .topbar {
+      flex: none;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .brand-dot { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+    .brand-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .back-link {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* 内容区占满剩余可视高度，卡片垂直居中 */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    article {
+      width: 100%;
+      max-width: 920px;
+      padding: 76px 84px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 13.5px;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+    h1 {
+      margin: 20px 0 40px;
+      font-family: var(--serif);
+      font-size: 56px;
+      line-height: 1.25;
+    }
+    .body {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    /* 页脚固定在可视区域底部 */
+    footer {
+      flex: none;
+      width: 100%;
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      article { padding: 32px 22px; }
+      h1 { font-size: 34px; }
+      .body { font-size: 17px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-dot"></span>
+      <span>Rain Pages</span>
+      <span class="brand-sub">PERSONAL ARCHIVE</span>
+    </a>
+    <a class="back-link" href="../../index.html">← 返回文章库</a>
+  </header>
+
+  <main>
+    <article>
+      <div class="meta">2026-09-09 · RAIN PAGES ARCHIVE</div>
+      <h1>随笔2</h1>
+      <div class="body">这个星期以来我并没有干什么特别震天动地的事（要是能干出来我就不会在这里写随笔了[笑]），我写随笔的时候突然发现这个网页居然会实时加载，有点酷。
+        <br>我在学rust的同时加上了cpp的进度，infact，cpp比rust写起来更顺手，毕竟没有令人恼火的所有权机制和一些奇怪的语法拘束。关于这一点我建议各位去学习油管博主cherno的视频教学，他的教学方案与国内视频大相径庭。
+        如果说国内的是“是什么”，那么他就教的是“为什么”。无论你是否先前有coding经验，我都建议你从他的教学去入手cpp，能够让你受益匪浅。
+        <br>为什么我要双线程并发学习rust和cpp呢？这就不得不提一些神秘小众数据类型和结构体了，cpp尽管在内存管理上不如rs，但是毕竟在很多情况下它的语法是比较适合我的主观看法的（非常主观的看点）。
+        但是rust也有很多好用的东西，比如它的迭代器就可以避免非常史山的for循环堆叠。我暂时不知道cpp有没有这种东西（大概率是有的），可能以后会用到。
+        <br>关于这个英语测试，老实说我并没有特别准备什么，倒不如直接把我分到B班好了，考这个试还得浪费我人生中宝贵的1h30min，力竭喵。
+        <br>距离开学还有不到8天，这是我第一次出省（对我就是乡巴佬，chou why did），老实说比起到新地方不适应新事物，我还是更害怕坐飞机一点，因为以前没坐过（笑）。btw，我还没有找到我的室友。。。
+        <br>无职转生我打算憋到更新完再补了，最近应该也不会看什么其他番剧吧，re0贤者之塔我好像也没看完，找个时间补完吧。
+        <br>如果我的随笔能让你在枯燥的生活中让你获得一丝慰藉，那么这就是值得的。现在是凌晨1:23，我有点饿了，大概我会在4点之前入睡吧。
+        <br>Bye Bye, World!
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>For wish, for blessing</span>
+    <a href="../../index.html">回到文章库 ↑</a>
+  </footer>
+</body>
+</html>

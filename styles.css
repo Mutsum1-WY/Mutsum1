@@ -925,5 +925,22 @@ body.topbar-fixed .topbar {
   .reader { padding: 24px 18px; border-radius: 12px; }
   .reader-head { flex-wrap: wrap; }
   .reader-header h1 { font-size: 24px; }
-  .search-wrap { max-width: none; }
+
+  /* 顶栏：缩小左上角品牌区，给右侧友链按钮留出足够空间 */
+  .topbar { gap: 10px; padding: 0 12px; }
+  .brand { font-size: 14px; gap: 6px; padding: 8px 2px; min-width: 0; }
+  .brand-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .brand-dot { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  .search-wrap { max-width: none; padding: 7px 12px; }
+  .links-btn { padding: 7px 12px; font-size: 12.5px; gap: 5px; }
+  .links-icon { width: 13px; height: 13px; }
+}
+
+/* 超窄屏：进一步压缩品牌区，保证友链按钮完整显示 */
+@media (max-width: 400px) {
+  .topbar { gap: 8px; }
+  .brand { font-size: 13px; gap: 5px; }
+  .brand-dot { width: 8px; height: 8px; }
+  .search-wrap { padding: 6px 10px; gap: 6px; }
+  .links-btn { padding: 6px 10px; }
 }

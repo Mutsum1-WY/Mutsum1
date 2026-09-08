@@ -196,8 +196,22 @@ const ESSAY_1_ARTICLE = {
   content: '',
 };
 
+/* 随笔2：对应磁盘存档 2026/随笔2/index.html（内容后续补充，正文在页面内编辑） */
+const ESSAY_2_ID = '2026-09-09-essay-2';
+const ESSAY_2_ARTICLE = {
+  id: ESSAY_2_ID,
+  title: '随笔2',
+  subtitle: '学习',
+  category: '',
+  tags: [],
+  link: '2026/%E9%9A%8F%E7%AC%942/index.html',   // 2026/随笔2/index.html（URL 编码）
+  createdAt: '2026-09-09T00:00:00',
+  updatedAt: '2026-09-09T00:00:00',
+  content: '',
+};
+
 /* 内置文章（磁盘存档 + 网页跳转）：统一在此登记，刷新后自动出现在列表 */
-const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE];
+const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE, ESSAY_2_ARTICLE];
 
 function loadArticles() {
   let data = null;
