@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.0.2';
+const APP_VERSION = '1.0.3';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {
@@ -210,8 +210,22 @@ const ESSAY_2_ARTICLE = {
   content: '',
 };
 
+/* 随笔3：对应磁盘存档 2026/随笔3/index.html（内容后续补充，正文在页面内编辑） */
+const ESSAY_3_ID = '2026-09-14-essay-3';
+const ESSAY_3_ARTICLE = {
+  id: ESSAY_3_ID,
+  title: '随笔3',
+  subtitle: '临近开学',
+  category: '',
+  tags: [],
+  link: '2026/%E9%9A%8F%E7%AC%943/index.html',   // 2026/随笔3/index.html（URL 编码）
+  createdAt: '2026-09-14T00:00:00',
+  updatedAt: '2026-09-14T00:00:00',
+  content: '',
+};
+
 /* 内置文章（磁盘存档 + 网页跳转）：统一在此登记，刷新后自动出现在列表 */
-const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE, ESSAY_2_ARTICLE];
+const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE, ESSAY_2_ARTICLE, ESSAY_3_ARTICLE];
 
 function loadArticles() {
   let data = null;
