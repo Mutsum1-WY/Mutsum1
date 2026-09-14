@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.0.6';
+const APP_VERSION = '1.0.7';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {
@@ -433,7 +433,10 @@ function setView(v) {
   updateScrollUI();
 }
 
-/* ---------------- 滚动联动：Hero 收缩 + 顶栏渐进浮现 ---------------- */
+/* ---------------- 滚动联动：Hero 收缩 + 顶栏滑出/收回 ---------------- */
+
+/* 顶栏方向判断基准：与上一次滚动位置比较，下滑弹出、上滑收回 */
+let lastTbScrollY = window.scrollY;
 
 function updateScrollUI() {
   const s = window.scrollY;
@@ -442,6 +445,7 @@ function updateScrollUI() {
     // 非列表视图：顶栏始终完整显示
     topbarEl.style.setProperty('--tb-progress', 1);
     topbarEl.style.pointerEvents = '';
+    lastTbScrollY = s;
     return;
   }
 
@@ -452,11 +456,16 @@ function updateScrollUI() {
   hero.style.height = h + 'px';
   hero.style.setProperty('--shrink', Math.min(1, s / full));
 
-  // 顶栏：页面顶部完全消失，下滑 240px 内渐进浮现
-  const reveal = 240;
-  const p = Math.min(1, s / reveal);
-  topbarEl.style.setProperty('--tb-progress', p);
-  topbarEl.style.pointerEvents = p >= 1 ? '' : 'none';
+  // 顶栏：页面顶部保持隐藏；只要下滑就完整弹出，上滑即收回
+  let p = null;
+  if (s <= 0) p = 0;
+  else if (s > lastTbScrollY) p = 1;
+  else if (s < lastTbScrollY) p = 0;
+  if (p !== null) {
+    topbarEl.style.setProperty('--tb-progress', p);
+    topbarEl.style.pointerEvents = p >= 1 ? '' : 'none';
+  }
+  lastTbScrollY = s;
 }
 
 window.addEventListener('scroll', updateScrollUI, { passive: true });

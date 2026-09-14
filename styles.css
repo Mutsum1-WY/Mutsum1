@@ -23,7 +23,7 @@
   --main-pad-y: 30px;
   --main-pad-x: 40px;
   /* 首页顶部背景图：修改下面这行路径即可替换（当前使用 src/shiki.jpg）；?v= 与站点版本号同步，用于缓存刷新 */
-  --hero-img: url('src/shiki.jpg?v=1.0.6');
+  --hero-img: url('src/shiki.jpg?v=1.0.7');
   --radius: 12px;
   --shadow: 0 1px 2px rgba(15, 42, 68, .05), 0 4px 14px rgba(15, 42, 68, .04);
 }
@@ -116,8 +116,9 @@ label:focus-visible {
 
 /* ============ 顶栏 ============ */
 
-/* --tb-progress 由 script.js 随滚动驱动：
-   页面顶部为 0（顶栏隐藏），下滑时渐进浮现（不透明度、背景、位移同步过渡） */
+/* --tb-progress 由 script.js 按滚动方向在 0/1 间切换：
+   页面顶部为 0（顶栏隐藏），下滑即 1（完整弹出），上滑回 0（收回）；
+   滑入滑出由下面的 transition 平滑过渡 */
 .topbar {
   position: sticky;
   top: 0;
@@ -134,6 +135,7 @@ label:focus-visible {
   background: color-mix(in srgb, var(--panel) calc(var(--tb-progress) * 100%), transparent);
   border-bottom: 1px solid var(--line);
   border-bottom-color: color-mix(in srgb, var(--line) calc(var(--tb-progress) * 100%), transparent);
+  transition: opacity .28s ease, transform .28s ease, background-color .28s ease, border-color .28s ease;
 }
 
 /* 首页（列表视图）：顶栏不占布局位置，让 Hero 从页面最顶端铺满整屏 */
