@@ -4,17 +4,18 @@
    ============================================================ */
 
 :root {
-  --bg: #f6f8fb;
+  color-scheme: light;
+  --bg: #eff6fc;
   --panel: #ffffff;
-  --ink: #0f1b2d;
-  --muted: #64748b;
-  --faint: #9aa7b8;
-  --line: #e5eaf2;
-  --line-strong: #cfd8e4;
-  --accent: #1e3a8a;
-  --accent-strong: #16296b;
-  --accent-soft: #e8edf9;
-  --mono-bg: #f0f3f8;
+  --ink: #0f2a44;
+  --muted: #5a7d9a;
+  --faint: #8dabc4;
+  --line: #dcebf6;
+  --line-strong: #bdd8ec;
+  --accent: #2b8ad2;
+  --accent-strong: #1a6aa8;
+  --accent-soft: #e3f1fc;
+  --mono-bg: #ebf4fb;
   --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   --serif: Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
   --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
@@ -22,9 +23,9 @@
   --main-pad-y: 30px;
   --main-pad-x: 40px;
   /* 首页顶部背景图：修改下面这行路径即可替换（当前使用 src/shiki.jpg）；?v= 与站点版本号同步，用于缓存刷新 */
-  --hero-img: url('src/shiki.jpg?v=1.0.3');
+  --hero-img: url('src/shiki.jpg?v=1.0.6');
   --radius: 12px;
-  --shadow: 0 1px 2px rgba(15, 27, 45, .05), 0 4px 14px rgba(15, 27, 45, .04);
+  --shadow: 0 1px 2px rgba(15, 42, 68, .05), 0 4px 14px rgba(15, 42, 68, .04);
 }
 
 * { box-sizing: border-box; }
@@ -50,6 +51,60 @@ body {
 
 a { color: inherit; }
 button { font: inherit; color: inherit; }
+
+/* ============ 夜间模式（黑色风格） ============ */
+
+/* 只覆盖颜色变量与个别硬编码色；白天模式即 :root 默认值 */
+html.dark {
+  color-scheme: dark;
+  --bg: #0a0f16;
+  --panel: #0f1722;
+  --ink: #e8eef5;
+  --muted: #93a7ba;
+  --faint: #5d7285;
+  --line: #1d2937;
+  --line-strong: #2e4156;
+  --accent: #5fb2f2;
+  --accent-strong: #9bcef7;
+  --accent-soft: #152738;
+  --mono-bg: #0d151f;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .45), 0 4px 14px rgba(0, 0, 0, .35);
+}
+
+/* 深色下个别固定写死的颜色 */
+html.dark .empty-state { background: rgba(15, 23, 34, .55); }
+html.dark .markdown-body blockquote { color: #a9c1d6; }
+html.dark .links-panel { box-shadow: 0 12px 40px rgba(0, 0, 0, .55); }
+html.dark .hero { background: #0d151f; }   /* 背景图加载前的兜底色 */
+
+/* ============ 昼夜模式切换按钮（顶栏右上角） ============ */
+
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.theme-btn:focus-visible { outline-offset: 3px; }
+
+.theme-icon { width: 16px; height: 16px; }
+
+/* 白天显示月亮（点击切夜间），夜间显示太阳（点击切白天） */
+.theme-btn .theme-icon-sun { display: none; }
+html.dark .theme-btn .theme-icon-sun { display: block; }
+html.dark .theme-btn .theme-icon-moon { display: none; }
 
 button:focus-visible,
 input:focus-visible,
@@ -197,7 +252,7 @@ body.topbar-fixed .topbar {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(15, 27, 45, .14);
+  box-shadow: 0 12px 40px rgba(15, 42, 68, .14);
 }
 
 .links-panel[hidden] { display: none; }
@@ -338,17 +393,24 @@ body.topbar-fixed .topbar {
   align-items: center;
   padding: 0 clamp(24px, 6vw, 72px);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(246, 248, 251, 0) 55%, rgba(246, 248, 251, .88) 100%),
-    linear-gradient(115deg, rgba(10, 22, 48, .82) 0%, rgba(10, 22, 48, .45) 55%, rgba(30, 58, 138, .38) 100%),
-    var(--hero-img) center / cover no-repeat,
-    linear-gradient(120deg, #16327a, #0a1740);
-  color: #f5f8ff;
+  background: #e9eef4;   /* 仅图片加载前/失败时的兜底色 */
+  /* 背景图上的文字固定用深色系，不随昼夜主题切换（图片本身不随主题变化） */
+  color: #0f2a44;
   --shrink: 0;
+}
+
+/* 背景图独占一层：与源文件显示一致，不做调色，也不叠加任何主题颜色层 */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-img) center / cover no-repeat;
 }
 
 /* 内容随收缩进度淡出上移 */
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 760px;
   opacity: calc(1 - var(--shrink));
   transform: translateY(calc(var(--shrink) * -24px));
@@ -363,14 +425,14 @@ body.topbar-fixed .topbar {
   font-size: 13px;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(15, 42, 68, .62);
 }
 
 .hero-eyebrow::before {
   content: '';
   width: 34px;
   height: 2px;
-  background: #bfdbfe;
+  background: #2b8ad2;
 }
 
 /* 标题 + 头像 并排一行 */
@@ -391,7 +453,7 @@ body.topbar-fixed .topbar {
   letter-spacing: .01em;
 }
 
-.hero-title em { font-style: normal; color: #bfdbfe; }
+.hero-title em { font-style: normal; color: #2b8ad2; }
 
 /* GitHub 头像链接 */
 .hero-avatar {
@@ -400,15 +462,15 @@ body.topbar-fixed .topbar {
   height: 76px;
   flex: none;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, .6);
+  border: 2px solid rgba(15, 42, 68, .3);
   overflow: hidden;
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
 .hero-avatar:hover {
   transform: scale(1.06);
-  border-color: #bfdbfe;
-  box-shadow: 0 0 0 4px rgba(191, 219, 254, .3);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(43, 138, 210, .25);
 }
 
 .hero-avatar img {
@@ -422,7 +484,7 @@ body.topbar-fixed .topbar {
   margin: 0 0 36px;
   font-size: 22px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, .92);
+  color: rgba(15, 42, 68, .88);
 }
 
 /* 轮换动画：旧文案沉入水下（下坠 + 模糊） */
@@ -456,12 +518,12 @@ body.topbar-fixed .topbar {
 }
 
 .hero .btn.hero-ghost {
-  border-color: rgba(255, 255, 255, .55);
-  color: #f5f8ff;
-  background: rgba(255, 255, 255, .08);
+  border-color: rgba(15, 42, 68, .45);
+  color: #0f2a44;
+  background: rgba(255, 255, 255, .4);
 }
 
-.hero .btn.hero-ghost:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .85); }
+.hero .btn.hero-ghost:hover { background: rgba(255, 255, 255, .72); border-color: var(--ink); }
 
 #articleGrid { scroll-margin-top: 90px; }
 
@@ -663,7 +725,7 @@ body.topbar-fixed .topbar {
   text-align: center;
   border: 1.5px dashed var(--line-strong);
   border-radius: var(--radius);
-  background: rgba(255, 253, 249, .5);
+  background: rgba(232, 243, 252, .55);
 }
 
 .empty-icon { font-size: 40px; margin-bottom: 10px; }
@@ -855,7 +917,7 @@ body.topbar-fixed .topbar {
   border-left: 3px solid var(--accent);
   background: var(--accent-soft);
   border-radius: 0 10px 10px 0;
-  color: #4c4a3f;
+  color: #3f5c78;
 }
 
 .markdown-body blockquote p { margin: .4em 0; }
@@ -957,6 +1019,7 @@ body.topbar-fixed .topbar {
   .search-wrap { max-width: none; padding: 7px 12px; }
   .links-btn { padding: 7px 12px; font-size: 12.5px; gap: 5px; }
   .links-icon { width: 13px; height: 13px; }
+  .theme-btn { width: 32px; height: 32px; }
 }
 
 /* 超窄屏：进一步压缩品牌区，保证友链按钮完整显示 */

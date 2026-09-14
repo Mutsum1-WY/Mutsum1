@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.0.4';
+const APP_VERSION = '1.0.6';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {
@@ -36,6 +36,38 @@ const LEGACY_PREF_KEY = 'inkwell.prefs.v1';
 const $ = (sel) => document.querySelector(sel);
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ---------------- 昼夜模式 ---------------- */
+
+/* 白天 = 默认浅蓝样式；夜间 = 黑色风格（html.dark 覆盖颜色变量）。
+   选择保存在 localStorage；index.html 头部有内联脚本尽早恢复，避免刷新闪错配色。 */
+const THEME_KEY = 'rainpages.theme.v1';
+const themeBtn = $('#themeBtn');
+
+function applyTheme(theme) {
+  const dark = theme === 'dark';
+  document.documentElement.classList.toggle('dark', dark);
+  if (themeBtn) {
+    const tip = dark ? '切换白天模式' : '切换夜间模式';
+    themeBtn.title = tip;
+    themeBtn.setAttribute('aria-label', tip);
+  }
+}
+
+let theme = 'light';
+try {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'dark' || savedTheme === 'light') theme = savedTheme;
+} catch (e) { /* localStorage 不可用时忽略 */ }
+applyTheme(theme);
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* 忽略 */ }
+    applyTheme(theme);
+  });
+}
 
 const pad2 = (n) => String(n).padStart(2, '0');
 
