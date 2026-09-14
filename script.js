@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.0.3';
+const APP_VERSION = '1.0.4';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {
@@ -438,6 +438,7 @@ const HERO_SUBTITLES = [
   '伤不是要你去忍耐的东西，痛是要说出来的。',
   '消失吧，群青。',
   '所谓的窄门，并不是只有被选中的人才能进入的门，而是要用自己的眼睛找出、抱着觉悟踏进去的门。',
+  '觉悟只能藏在心里，说出口就是对自己的胁迫了。',
 ];
 
 const heroSubEl = document.querySelector('#heroSub');
