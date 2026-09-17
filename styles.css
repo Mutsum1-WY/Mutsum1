@@ -23,7 +23,7 @@
   --main-pad-y: 30px;
   --main-pad-x: 40px;
   /* 首页顶部背景图：修改下面这行路径即可替换（当前使用 src/shiki.jpg）；?v= 与站点版本号同步，用于缓存刷新 */
-  --hero-img: url('src/shiki.jpg?v=1.0.7');
+  --hero-img: url('src/shiki.jpg?v=1.0.8');
   --radius: 12px;
   --shadow: 0 1px 2px rgba(15, 42, 68, .05), 0 4px 14px rgba(15, 42, 68, .04);
 }
@@ -557,13 +557,96 @@ body.topbar-fixed .topbar {
   margin-bottom: 22px;
 }
 
-/* 文章区域：左侧 3/4 宽，右侧留白 */
+/* 文章区域：文章列 + 右侧信息栏 */
+.list-row {
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.list-col { flex: 1; min-width: 0; }
+
 .list-head,
 .article-grid,
-.empty-state {
-  width: 75%;
-  max-width: 1000px;
+.empty-state { width: 100%; }
+
+/* 右侧信息栏：公告 + 个人链接 合并一张卡片 */
+.side-col {
+  flex: none;
+  width: 340px;
+  margin-top: 24px;          /* 与上方边界留出间隙 */
+  position: sticky;
+  top: 96px;                 /* 顶栏弹出时也在其下方（含顶部间隙） */
 }
+
+.side-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.side-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.side-card h2::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: var(--accent);
+  flex: none;
+}
+
+/* 卡片内分区：公告 / 个人链接，虚线分隔 */
+.side-block + .side-block {
+  margin-top: 14px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.side-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.side-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.side-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--ink);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background .12s, color .12s;
+}
+
+.side-links a:hover { background: var(--accent-soft); color: var(--accent); }
 
 .list-head h1 {
   margin: 0;
@@ -996,10 +1079,9 @@ body.topbar-fixed .topbar {
   .topbar { gap: 12px; padding: 0 14px; }
   .brand-sub { display: none; }
 
-  /* 窄屏恢复全宽 */
-  .list-head,
-  .article-grid,
-  .empty-state { width: 100%; }
+  /* 窄屏：文章区全宽，信息栏（单卡片）移到文章下方 */
+  .list-row { flex-direction: column; }
+  .side-col { width: 100%; margin-top: 0; position: static; }
 
   .article-row { flex-direction: column; gap: 12px; }
   .row-side { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }

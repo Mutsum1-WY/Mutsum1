@@ -14,7 +14,7 @@
   <link rel="alternate" type="application/rss+xml" title="Rain Pages · RSS" href="feed.xml" />
   <!-- 静态资源带版本参数：每次升级版本时，把下面两处 ?v= 与 script.js 中的 APP_VERSION 一起改成新版本号，
        浏览器就会把 styles.css / script.js 当作新地址重新下载，避免旧缓存。 -->
-  <link rel="stylesheet" href="styles.css?v=1.0.7" />
+  <link rel="stylesheet" href="styles.css?v=1.0.8" />
 </head>
 <body class="topbar-fixed">
 
@@ -81,28 +81,49 @@
           </section>
         </div>
 
-        <div class="list-head">
-          <h1 id="listTitle">全部文章</h1>
-          <div class="list-head-right">
-            <span class="list-count" id="listCount"></span>
-            <label class="sort-select">排序
-              <select id="sortSelect" aria-label="文章排序">
-                <option value="updated">最近更新</option>
-                <option value="created">最新创建</option>
-                <option value="oldest">最早创建</option>
-                <option value="title">按标题</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div class="article-grid" id="articleGrid"></div>
+        <div class="list-row">
+          <div class="list-col">
+            <div class="list-head">
+              <h1 id="listTitle">全部文章</h1>
+              <div class="list-head-right">
+                <span class="list-count" id="listCount"></span>
+                <label class="sort-select">排序
+                  <select id="sortSelect" aria-label="文章排序">
+                    <option value="updated">最近更新</option>
+                    <option value="created">最新创建</option>
+                    <option value="oldest">最早创建</option>
+                    <option value="title">按标题</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="article-grid" id="articleGrid"></div>
 
-        <!-- 空状态 -->
-        <div class="empty-state" id="emptyState" hidden>
-          <div class="empty-icon" aria-hidden="true">📄</div>
-          <h2 id="emptyTitle">还没有任何文章</h2>
-          <p id="emptyText"></p>
-          <button class="btn ghost" id="clearFilterBtn" type="button" hidden>清除筛选</button>
+            <!-- 空状态 -->
+            <div class="empty-state" id="emptyState" hidden>
+              <div class="empty-icon" aria-hidden="true">📄</div>
+              <h2 id="emptyTitle">还没有任何文章</h2>
+              <p id="emptyText"></p>
+              <button class="btn ghost" id="clearFilterBtn" type="button" hidden>清除筛选</button>
+            </div>
+          </div>
+
+          <!-- 右侧信息栏：公告 + 个人链接 合并在一张卡片（直接改下面的文字即可） -->
+          <aside class="side-col">
+            <section class="side-card">
+              <div class="side-block">
+                <h2>公告</h2>
+                <p class="side-text">欢迎来到 Mutsum1 的个人文章库，这里存放随笔与杂记，更新不定期，想到什么写什么。</p>
+              </div>
+              <div class="side-block">
+                <h2>个人链接</h2>
+                <ul class="side-links">
+                  <li><a href="https://github.com/Mutsum1-WY" target="_blank" rel="noopener noreferrer">GitHub · Mutsum1-WY</a></li>
+                  <li><a href="feed.xml" target="_blank" rel="noopener">RSS 订阅</a></li>
+                </ul>
+              </div>
+            </section>
+          </aside>
         </div>
 
         <!-- 主页底部区块 -->
@@ -147,6 +168,6 @@
   </div>
 
   <noscript><p style="padding:24px;text-align:center">Rain Pages 需要启用 JavaScript 才能运行。</p></noscript>
-  <script src="script.js?v=1.0.7"></script>
+  <script src="script.js?v=1.0.8"></script>
 </body>
 </html>
