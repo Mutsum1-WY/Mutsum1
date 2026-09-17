@@ -19,8 +19,16 @@
     <description>Mutsum1 的个人文章归档 · PERSONAL ARCHIVE</description>
     <language>zh-CN</language>
     <copyright>Mutsum1</copyright>
-    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://mutsum1-wy.github.io/Mutsum1/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>北邮记（一）</title>
+      <link>https://mutsum1-wy.github.io/Mutsum1/2026/%E5%8C%97%E9%82%AE%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html</link>
+      <guid isPermaLink="true">https://mutsum1-wy.github.io/Mutsum1/2026/%E5%8C%97%E9%82%AE%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0800</pubDate>
+      <description>初到北京与北邮</description>
+    </item>
 
     <item>
       <title>随笔3</title>

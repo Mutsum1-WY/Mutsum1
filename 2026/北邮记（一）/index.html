@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="北邮记（一） · 初到北京与北邮 · Rain Pages 个人文章" />
+  <title>北邮记（一） · Rain Pages</title>
+  <script>try { if (localStorage.getItem('rainpages.theme.v1') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}</script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfdbfe'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23g)'%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(7 13) scale(.62)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(56 55) scale(.42)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(68 18) scale(.26)'/%3E%3C/g%3E%3Cellipse cx='30' cy='46' rx='4.5' ry='7' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #eff6fc;
+      --panel: #ffffff;
+      --ink: #0f2a44;
+      --muted: #5a7d9a;
+      --faint: #8dabc4;
+      --line: #dcebf6;
+      --accent: #2b8ad2;
+      --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      --serif: Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
+      --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    }
+        /* 夜间模式（与主页一致：白天 = 浅蓝，夜间 = 黑色风格） */
+    html.dark {
+      color-scheme: dark;
+      --bg: #0a0f16;
+      --panel: #0f1722;
+      --ink: #e8eef5;
+      --muted: #93a7ba;
+      --faint: #5d7285;
+      --line: #1d2937;
+      --accent: #5fb2f2;
+    }
+    * { box-sizing: border-box; }
+    html { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    .topbar {
+      flex: none;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .brand-dot { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+    .brand-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-icon { width: 16px; height: 16px; }
+    .theme-btn .theme-icon-sun { display: none; }
+    html.dark .theme-btn .theme-icon-sun { display: block; }
+    html.dark .theme-btn .theme-icon-moon { display: none; }
+    .back-link {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* 内容区占满剩余可视高度，卡片垂直居中 */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    article {
+      width: 100%;
+      max-width: 920px;
+      padding: 76px 84px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 13.5px;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+    h1 {
+      margin: 20px 0 40px;
+      font-family: var(--serif);
+      font-size: 56px;
+      line-height: 1.25;
+    }
+    .body {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 2;
+      color: var(--muted);
+    }
+    .body p { margin: 0; text-indent: 2em; }   /* 自然段首行缩进两字符 */
+
+    /* 页脚固定在可视区域底部 */
+    footer {
+      flex: none;
+      width: 100%;
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      article { padding: 32px 22px; }
+      h1 { font-size: 34px; }
+      .body { font-size: 17px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-dot"></span>
+      <span>Rain Pages</span>
+      <span class="brand-sub">PERSONAL ARCHIVE</span>
+    </a>
+    <div class="topbar-right">
+      <a class="back-link" href="../../index.html">← 返回文章库</a>
+      <button class="theme-btn" id="themeBtn" type="button" title="切换夜间模式" aria-label="切换夜间模式">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="meta">2026-09-18 · RAIN PAGES ARCHIVE</div>
+      <h1>北邮记（一）</h1>
+      <div class="body">
+        <p>你现在看到的这篇文章本该在9.17推送，对的，我鸽到了9.18（笑）。</p>
+        <p>那么来说一下这几天发生了什么吧。首先，9.16日是进京当天，其实飞机勉勉强强，算坐的不太舒服。提一嘴其实机餐挺好吃的。落地之后先去了大栅栏的吉尔达宾馆，不得不说北二环的物价贵的飞起，一瓶雪碧要5r。因为缺乏睡眠，笔者已经比较难想起到底做了什么。</p>
+        <p>好像想起来了，去了王府井吃大鸭梨烤鸭，这或许是我人生中第一次为一顿饭消费这么多。因为不是我付钱其实花了多少我也忘了捏。总之还是很好吃的，有钱的可以去尝尝。吃完后被出租车司机带着绕了一圈天安门，介绍了什么红墙灰墙之类的。北京的秋是一种干爽的秋，在热闹的街气下又饱含秋风的凉爽，火气与秋风杂糅在落叶中。</p>
+        <p>第二天起的很早，是看升旗。本人由于路途奔波导致两天睡眠不足5h，感觉要似了。升旗本身没什么好说的，主要是看天安门。这一段本身没有什么有意思的，笔者略过。</p>
+        <p>在8点前往沙河是场彻彻底底的灾难，早高峰带来的人流量摧毁了我仅存的力气。连站近10站使我的双膝与双脚哀嚎。千万不要去挤早高峰的地铁，会变得不幸。</p>
+        <p>沙河校区比看上去的要大，但是实际走起来却又没那么大。迎新当天人头攒动，亲身经历了古法开盒的笔者在快递和报道以及极度缺乏睡眠的反复折磨下终于似掉了（好欸）。宿舍的桌子其实蛮大的，以及在不出寝室以及不移动的情况下校园网的稳定性还是很可观的（我还是要骂它）。作为雁北d2的软妹肯定是体验了一把大澡堂，老实说其实没什么感觉，就和平时洗澡一样，水还挺大。</p>
+        <p>我感觉已经开始梦到什么写什么了，也许会有下篇随笔吧。Bye Bye，World！</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>For wish, for blessing</span>
+    <a href="../../index.html">回到文章库 ↑</a>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('themeBtn');
+      if (!btn) return;
+      function sync() {
+        var dark = document.documentElement.classList.contains('dark');
+        var tip = dark ? '切换白天模式' : '切换夜间模式';
+        btn.title = tip;
+        btn.setAttribute('aria-label', tip);
+      }
+      sync();
+      btn.addEventListener('click', function () {
+        var dark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', dark);
+        try { localStorage.setItem('rainpages.theme.v1', dark ? 'dark' : 'light'); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+</body>
+</html>
