@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.0.9';
+const APP_VERSION = '1.1.0';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {
@@ -270,8 +270,22 @@ const ESSAY_4_ARTICLE = {
   content: '',
 };
 
+/* 北邮记（二）：对应磁盘存档 2026/北邮记（二）/index.html（内容后续补充，正文在页面内编辑） */
+const ESSAY_5_ID = '2026-09-21-essay-5';
+const ESSAY_5_ARTICLE = {
+  id: ESSAY_5_ID,
+  title: '北邮记（二）',
+  subtitle: '北邮初期生活',
+  category: '',
+  tags: [],
+  link: '2026/%E5%8C%97%E9%82%AE%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/index.html',   // 2026/北邮记（二）/index.html（URL 编码）
+  createdAt: '2026-09-21T00:00:00',
+  updatedAt: '2026-09-21T00:00:00',
+  content: '',
+};
+
 /* 内置文章（磁盘存档 + 网页跳转）：统一在此登记，刷新后自动出现在列表 */
-const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE, ESSAY_2_ARTICLE, ESSAY_3_ARTICLE, ESSAY_4_ARTICLE];
+const BUILTIN_ARTICLES = [FIRST_ARTICLE, ESSAY_1_ARTICLE, ESSAY_2_ARTICLE, ESSAY_3_ARTICLE, ESSAY_4_ARTICLE, ESSAY_5_ARTICLE];
 
 function loadArticles() {
   let data = null;

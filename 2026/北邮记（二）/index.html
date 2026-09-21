@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="gaKJBFBrDZounwBO1sZmaO">
+<head data-page-node-id="p41TcLsOdQUWhINMT1hqLE">
+  <meta charset="UTF-8" data-page-node-id="bMC5LsaG0Wm53kiKxru7D1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="rO2Hq3cUYTvhayuWApe5bn" />
+  <meta name="description" content="北邮记（二） · 北邮初期生活 · Rain Pages 个人文章" data-page-node-id="F7q1dDkzXoulMMc5iqFZvY" />
+  <title>北邮记（二） · Rain Pages</title>
+  <script>try { if (localStorage.getItem('rainpages.theme.v1') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}</script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfdbfe'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23g)'%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(7 13) scale(.62)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(56 55) scale(.42)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(68 18) scale(.26)'/%3E%3C/g%3E%3Cellipse cx='30' cy='46' rx='4.5' ry='7' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" data-page-node-id="sVQFCCvYKlkAPDcA9aDBEI" />
+  <style>
+    :root {
+      --bg: #eff6fc;
+      --panel: #ffffff;
+      --ink: #0f2a44;
+      --muted: #5a7d9a;
+      --faint: #8dabc4;
+      --line: #dcebf6;
+      --accent: #2b8ad2;
+      --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      --serif: Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
+      --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+    }
+        /* 夜间模式（与主页一致：白天 = 浅蓝，夜间 = 黑色风格） */
+    html.dark {
+      color-scheme: dark;
+      --bg: #0a0f16;
+      --panel: #0f1722;
+      --ink: #e8eef5;
+      --muted: #93a7ba;
+      --faint: #5d7285;
+      --line: #1d2937;
+      --accent: #5fb2f2;
+    }
+    * { box-sizing: border-box; }
+    html { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    .topbar {
+      flex: none;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .brand-dot { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+    .brand-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-icon { width: 16px; height: 16px; }
+    .theme-btn .theme-icon-sun { display: none; }
+    html.dark .theme-btn .theme-icon-sun { display: block; }
+    html.dark .theme-btn .theme-icon-moon { display: none; }
+    .back-link {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* 内容区占满剩余可视高度，卡片垂直居中 */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    article {
+      width: 100%;
+      max-width: 920px;
+      padding: 76px 84px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 13.5px;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+    h1 {
+      margin: 20px 0 40px;
+      font-family: var(--serif);
+      font-size: 56px;
+      line-height: 1.25;
+    }
+    .body {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 2;
+      color: var(--muted);
+    }
+    .body p { margin: 0; text-indent: 2em; }   /* 自然段首行缩进两字符 */
+
+    /* 页脚固定在可视区域底部 */
+    footer {
+      flex: none;
+      width: 100%;
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      article { padding: 32px 22px; }
+      h1 { font-size: 34px; }
+      .body { font-size: 17px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body data-page-node-id="VwAY9Ox1xSwmFTFbqjk81X">
+  <header class="topbar" data-page-node-id="5XgA4Ezfo1LEQeuYdCmATD">
+    <a class="brand" href="../../index.html" data-page-node-id="OVlORRTzIt6KjyQ7A8VRLg">
+      <span class="brand-dot" data-page-node-id="1tTO0MIgK8aBi1vpHVClSC"></span>
+      <span data-page-node-id="aPcZRyrT62Cqz10YCt7kbA">Rain Pages</span>
+      <span class="brand-sub" data-page-node-id="rYQYQ4EWXySqBD5wZdNnVy">PERSONAL ARCHIVE</span>
+    </a>
+    <div class="topbar-right" data-page-node-id="hUEXBrpH4ZBGtWIfy6jQjT">
+      <a class="back-link" href="../../index.html" data-page-node-id="hnuYEZMsgOOPrbD4gfUXAX">← 返回文章库</a>
+      <button class="theme-btn" id="themeBtn" type="button" title="切换夜间模式" aria-label="切换夜间模式" data-page-node-id="AVpSzqQSuwJBGdHSdgK1VM">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="fOApBw3YhqGrhGE7SWd495"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-page-node-id="IuI41j908doGwmDqCqWYhC"/></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="PTjDlCQtjxhAkTjA9nIZRS"><circle cx="12" cy="12" r="4" data-page-node-id="YdM41sUhmAm2lSYusbxkY1"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" data-page-node-id="p0uIfP3ToG9IeE5WLD2d8r"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main data-page-node-id="takdpbS0rBqUR0XFLsqM5q">
+    <article data-page-node-id="qSRa1IJiTQeqhw8ETvEa4L">
+      <div class="meta" data-page-node-id="JyGlkxH9lId3ThQ4zFsPJT">2026-09-21 · RAIN PAGES ARCHIVE</div>
+      <h1 data-page-node-id="EtmD295EujBFgwHPt5fhgu">北邮记（二）</h1>
+      <div class="body" data-page-node-id="SX2aH48RfhhfDsMwGo4RNc">
+        <p data-page-node-id="BmhMTQHjdEmGYRbNAatrK1">今天是9.21日，开学第一天上了两堂课，线代和计导。</p>
+        <p data-page-node-id="MxtiHgx8TzEFFq5I8FYcHV">关于线代，作为一门数学课，不得不说进度十分快，今天主要讲了关于映射和一些基本初等函数的知识，不算难，还有一些集合的知识。而关于计导，就不得不提老师课上要讲西皮皮但是不提前让学生配置好环境的奇闻轶事了。难评一堆人复刻一遍代码结果没有环境编译不了的课堂，实在难绷（希望下节课之前能通知）。</p>
+        <p>北邮的食堂还是比较不错的，起码花了钱不会太难吃。校园里边有kfc，不想吃饭可以吃kfc。总体北邮的生活还是比较自由的，除了那个中午没有午休时间以外基本还算可以。校内也有蜜雪冰城这种平民饮料店，大大方方买。</p>
+        <p>哦对了我的公选课目前还是滚木，希望滚木复活，懂的+1。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer data-page-node-id="9eTSto93FfmU8JObS4MxAp">
+    <span data-page-node-id="bMti45HxaBCdSlw7JqXh9A">For wish, for blessing</span>
+    <a href="../../index.html" data-page-node-id="OohQCHniRWxXeMMWRWpjvg">回到文章库 ↑</a>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('themeBtn');
+      if (!btn) return;
+      function sync() {
+        var dark = document.documentElement.classList.contains('dark');
+        var tip = dark ? '切换白天模式' : '切换夜间模式';
+        btn.title = tip;
+        btn.setAttribute('aria-label', tip);
+      }
+      sync();
+      btn.addEventListener('click', function () {
+        var dark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', dark);
+        try { localStorage.setItem('rainpages.theme.v1', dark ? 'dark' : 'light'); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+</body>
+</html>
