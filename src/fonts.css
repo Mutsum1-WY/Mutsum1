@@ -1,0 +1,658 @@
+/* ============================================================
+   Rain Pages · 圆润字体（Chill 圆体 / 寒蝉半圆体）
+
+   字体作者：Warren2060，基于思源黑体圆角化改造，
+   授权：SIL Open Font License 1.1（可自由使用、修改、随站点分发）。
+   来源：https://github.com/Warren2060/ChillRoundGothic
+
+   这里按 Unicode 区段切成多个 woff2 子集：浏览器只会下载
+   当前页面真正用到的那几段（unicode-range 机制），
+   因此整站字体约 9 MB，单个页面通常只下载 300–900 KB。
+
+   新增文章若出现生僻字（CJK 扩展 B 区及以后），会回落到系统字体，
+   属于预期行为。
+============================================================ */
+
+/* ---- 常规 font-weight: 400 · 40 段 · 4.42 MB ---- */
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-01.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+20-7E;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-02.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+A0-103,U+110-113,U+11A-11B,U+128-12B,U+143-144,U+147-148,U+14C-14F,U+152-153,U+168-16D,U+192,U+1A0-1A1,U+1AF-1B0,U+1CD-1DC,U+1F8-1F9,U+251,U+261,U+2BB,U+2C7,U+2C9-2CB,U+2D9,U+2EA-2EB;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-03.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+2002-2003,U+2010-2016,U+2018-201A,U+201C-201E,U+2020-2022,U+2025-2027,U+2030,U+2032-2033,U+2035,U+2039-203C,U+2042,U+2047-2049,U+2051,U+2E3A-2E3B;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-04.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+3001-3030,U+3033-303F,U+3041-3096,U+3099-30FF,U+31C0-31E3,U+FF01-FF3F,U+FF41-FF5D,U+FF5F-FF9F,U+FFA1-FFBE,U+FFC2-FFC7,U+FFCA-FFCF,U+FFD2-FFD7,U+FFDA-FFDC,U+FFE0-FFE6,U+FFE8-FFEE;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-05.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+4E00-5057;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-06.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5058-52AF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-07.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+52B0-5507;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-08.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5508-575F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-09.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5760-59B7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-10.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+59B8-5C0F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-11.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5C10-5E67;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-12.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5E68-60BF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-13.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+60C0-6317;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-14.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6318-656F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-15.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6570-67C7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-16.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+67C8-6A1F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-17.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6A20-6C77;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-18.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6C78-6ECF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-19.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6ED0-7127;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-20.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7128-737F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-21.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7380-75D7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-22.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+75D8-782F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-23.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7830-7A87;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-24.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7A88-7CDF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-25.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7CE0-7F37;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-26.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7F38-818F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-27.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8190-83E7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-28.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+83E8-863F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-29.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8640-8897;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-30.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8898-8AEF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-31.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8AF0-8D47;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-32.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8D48-8F9F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-33.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8FA0-91F7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-34.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+91F8-944F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-35.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9450-96A7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-36.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+96A8-98FF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-37.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9900-9B57;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-38.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9B58-9DAF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-39.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9DB0-9FEF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-regular-40.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+F900-F903,U+F905-F906,U+F90B-F90C,U+F915,U+F917-F91A,U+F921,U+F929,U+F92C-F92D,U+F92F,U+F931-F935,U+F937-F93A,U+F943,U+F947-F94A,U+F94E,U+F952-F953,U+F95E,U+F962-F967,U+F96E,U+F972,U+F974,U+F976,U+F979-F97B,U+F97E-F980,U+F984-F985,U+F98A-F98C,U+F98E,U+F993,U+F995,U+F998,U+F9A8,U+F9AE,U+F9B3,U+F9B7,U+F9BB,U+F9BD-F9BE,U+F9C0,U+F9C5-F9C6,U+F9D0,U+F9D8-F9D9,U+F9DC-F9E0,U+F9E2-F9E4,U+F9E7,U+F9E9,U+F9F1,U+F9F4-F9F5,U+F9FA,U+F9FD,U+F9FF,U+FA02,U+FA05-FA08,U+FA0A,U+FA0C-FA0D,U+FA0F,U+FA18-FA19,U+FA1B,U+FA1D,U+FA1F-FA21,U+FA23-FA27,U+FA2B,U+FA2D,U+FA2F,U+FA33-FA35,U+FA37-FA38,U+FA3A,U+FA47,U+FA49,U+FA4B-FA4C,U+FA5D-FA5E;
+}
+
+/* ---- 粗体 font-weight: 700 · 40 段 · 4.51 MB ---- */
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-01.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+20-7E;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-02.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+A0-103,U+110-113,U+11A-11B,U+128-12B,U+143-144,U+147-148,U+14C-14F,U+152-153,U+168-16D,U+192,U+1A0-1A1,U+1AF-1B0,U+1CD-1DC,U+1F8-1F9,U+251,U+261,U+2BB,U+2C7,U+2C9-2CB,U+2D9,U+2EA-2EB;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-03.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+2002-2003,U+2010-2016,U+2018-201A,U+201C-201E,U+2020-2022,U+2025-2027,U+2030,U+2032-2033,U+2035,U+2039-203C,U+2042,U+2047-2049,U+2051,U+2E3A-2E3B;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-04.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+3001-3030,U+3033-303F,U+3041-3096,U+3099-30FF,U+31C0-31E3,U+FF01-FF3F,U+FF41-FF5D,U+FF5F-FF9F,U+FFA1-FFBE,U+FFC2-FFC7,U+FFCA-FFCF,U+FFD2-FFD7,U+FFDA-FFDC,U+FFE0-FFE6,U+FFE8-FFEE;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-05.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+4E00-5057;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-06.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5058-52AF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-07.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+52B0-5507;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-08.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5508-575F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-09.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5760-59B7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-10.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+59B8-5C0F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-11.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5C10-5E67;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-12.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+5E68-60BF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-13.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+60C0-6317;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-14.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6318-656F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-15.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6570-67C7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-16.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+67C8-6A1F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-17.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6A20-6C77;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-18.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6C78-6ECF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-19.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+6ED0-7127;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-20.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7128-737F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-21.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7380-75D7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-22.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+75D8-782F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-23.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7830-7A87;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-24.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7A88-7CDF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-25.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7CE0-7F37;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-26.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+7F38-818F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-27.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8190-83E7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-28.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+83E8-863F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-29.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8640-8897;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-30.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8898-8AEF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-31.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8AF0-8D47;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-32.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8D48-8F9F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-33.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+8FA0-91F7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-34.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+91F8-944F;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-35.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9450-96A7;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-36.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+96A8-98FF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-37.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9900-9B57;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-38.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9B58-9DAF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-39.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+9DB0-9FEF;
+}
+@font-face {
+  font-family: 'Chill Round Gothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/chillround-gothic/chillround-bold-40.woff2?v=1.2.0') format('woff2');
+  unicode-range: U+F900-F903,U+F905-F906,U+F90B-F90C,U+F915,U+F917-F91A,U+F921,U+F929,U+F92C-F92D,U+F92F,U+F931-F935,U+F937-F93A,U+F943,U+F947-F94A,U+F94E,U+F952-F953,U+F95E,U+F962-F967,U+F96E,U+F972,U+F974,U+F976,U+F979-F97B,U+F97E-F980,U+F984-F985,U+F98A-F98C,U+F98E,U+F993,U+F995,U+F998,U+F9A8,U+F9AE,U+F9B3,U+F9B7,U+F9BB,U+F9BD-F9BE,U+F9C0,U+F9C5-F9C6,U+F9D0,U+F9D8-F9D9,U+F9DC-F9E0,U+F9E2-F9E4,U+F9E7,U+F9E9,U+F9F1,U+F9F4-F9F5,U+F9FA,U+F9FD,U+F9FF,U+FA02,U+FA05-FA08,U+FA0A,U+FA0C-FA0D,U+FA0F,U+FA18-FA19,U+FA1B,U+FA1D,U+FA1F-FA21,U+FA23-FA27,U+FA2B,U+FA2D,U+FA2F,U+FA33-FA35,U+FA37-FA38,U+FA3A,U+FA47,U+FA49,U+FA4B-FA4C,U+FA5D-FA5E;
+}

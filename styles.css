@@ -16,14 +16,19 @@
   --accent-strong: #1a6aa8;
   --accent-soft: #e3f1fc;
   --mono-bg: #ebf4fb;
-  --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-  --serif: Georgia, "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
+  /* 圆润字体：Chill 圆体（寒蝉半圆体，SIL OFL，随站点本地分发，见 src/fonts.css）
+     放在最前面 —— 界面文字、标题、英文数字全部使用圆体；
+     末尾保留 "Segoe UI Emoji" 等系统字体，用于 📄🤓 这类圆体不含的字符。 */
+  --sans: "Chill Round Gothic", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  /* 正文（.markdown-body / .row-sub / .footer-desc）保持衬线阅读风，
+     只是把中文衬线也指向圆体，让嵌在正文里的英文数字同样圆润。 */
+  --serif: Georgia, "Chill Round Gothic", "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
   --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, "Courier New", monospace;
   --topbar-h: 58px;
   --main-pad-y: 30px;
   --main-pad-x: 40px;
   /* 首页顶部背景图：修改下面这行路径即可替换（当前使用 src/shiki.jpg）；?v= 与站点版本号同步，用于缓存刷新 */
-  --hero-img: url('src/shiki.jpg?v=1.0.9');
+  --hero-img: url('src/shiki.jpg?v=1.2.0');
   --radius: 12px;
   --shadow: 0 1px 2px rgba(15, 42, 68, .05), 0 4px 14px rgba(15, 42, 68, .04);
 }
