@@ -9,7 +9,7 @@
 
 /* 当前版本号：升级时改成新版本号，并同步修改 index.html 里
    styles.css?v= 与 script.js?v= 的查询参数，浏览器即会重新下载资源。 */
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.3.0';
 const VERSION_KEY = 'rainpages.version.v1';
 
 try {

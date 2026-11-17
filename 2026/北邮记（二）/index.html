@@ -10,27 +10,36 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfdbfe'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23g)'%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(7 13) scale(.62)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(56 55) scale(.42)'/%3E%3Cpath d='M50 4C34 24 18 42 18 62a32 32 0 0 0 64 0C82 42 66 24 50 4z' transform='translate(68 18) scale(.26)'/%3E%3C/g%3E%3Cellipse cx='30' cy='46' rx='4.5' ry='7' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" data-page-node-id="sVQFCCvYKlkAPDcA9aDBEI" />
   <style>
     :root {
-      --bg: #eff6fc;
+      color-scheme: light;
+      --bg: #f2f2f7;
       --panel: #ffffff;
-      --ink: #0f2a44;
-      --muted: #5a7d9a;
-      --faint: #8dabc4;
-      --line: #dcebf6;
-      --accent: #2b8ad2;
-      --sans: "Chill Round Gothic", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+      --panel-glass: rgba(255, 255, 255, 0.78);
+      --ink: #1c1c1e;
+      --muted: rgba(60, 60, 67, 0.68);
+      --faint: rgba(60, 60, 67, 0.38);
+      --line: rgba(60, 60, 67, 0.12);
+      --fill: rgba(120, 120, 128, 0.12);
+      --fill-hover: rgba(120, 120, 128, 0.18);
+      --accent: #007aff;
+      --sans: "Chill Round Gothic", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Rounded", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
       --serif: Georgia, "Chill Round Gothic", "Noto Serif SC", "Songti SC", "STSong", SimSun, serif;
-      --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+      --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+      --shadow: 0 2px 10px rgba(0, 0, 0, .04), 0 1px 3px rgba(0, 0, 0, .03);
     }
-        /* 夜间模式（与主页一致：白天 = 浅蓝，夜间 = 黑色风格） */
+    /* 夜间模式（与主页一致：iOS Dark Mode） */
     html.dark {
       color-scheme: dark;
-      --bg: #0a0f16;
-      --panel: #0f1722;
-      --ink: #e8eef5;
-      --muted: #93a7ba;
-      --faint: #5d7285;
-      --line: #1d2937;
-      --accent: #5fb2f2;
+      --bg: #000000;
+      --panel: #1c1c1e;
+      --panel-glass: rgba(28, 28, 30, 0.78);
+      --ink: #ffffff;
+      --muted: rgba(235, 235, 245, 0.68);
+      --faint: rgba(235, 235, 245, 0.38);
+      --line: rgba(84, 84, 88, 0.48);
+      --fill: rgba(120, 120, 128, 0.24);
+      --fill-hover: rgba(120, 120, 128, 0.34);
+      --accent: #0a84ff;
+      --shadow: 0 2px 12px rgba(0, 0, 0, .35), 0 1px 3px rgba(0, 0, 0, .25);
     }
     * { box-sizing: border-box; }
     html { height: 100%; }
@@ -45,17 +54,23 @@
       font-size: 15px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a { color: inherit; }
 
     .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       flex: none;
       height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
-      background: var(--panel);
+      background: var(--panel-glass);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 1px solid var(--line);
     }
     .brand {
@@ -65,14 +80,21 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 17px;
+      letter-spacing: -.01em;
     }
-    .brand-dot { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+    .brand-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #5ac8fa, var(--accent));
+      box-shadow: 0 1px 3px rgba(0, 122, 255, .28);
+    }
     .brand-sub {
       font-family: var(--mono);
       font-size: 10px;
-      letter-spacing: .22em;
+      letter-spacing: .2em;
       color: var(--muted);
-      margin-top: 3px;
+      margin-top: 2px;
     }
     .topbar-right { display: flex; align-items: center; gap: 12px; }
     .theme-btn {
@@ -82,25 +104,32 @@
       width: 36px;
       height: 36px;
       padding: 0;
-      border: 1px solid var(--line);
+      border: 1px solid transparent;
       border-radius: 999px;
-      background: var(--panel);
+      background: var(--fill);
       color: var(--ink);
       cursor: pointer;
-      transition: border-color .15s, color .15s;
+      transition: background .15s, color .15s, transform .18s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-btn:hover { background: var(--fill-hover); color: var(--accent); }
+    .theme-btn:active { transform: scale(0.92); }
     .theme-icon { width: 16px; height: 16px; }
     .theme-btn .theme-icon-sun { display: none; }
     html.dark .theme-btn .theme-icon-sun { display: block; }
     html.dark .theme-btn .theme-icon-moon { display: none; }
     .back-link {
-      font-family: var(--mono);
-      font-size: 12.5px;
-      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--fill);
       text-decoration: none;
+      transition: background .15s, transform .18s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    .back-link:hover { color: var(--accent); }
+    .back-link:hover { background: var(--fill-hover); }
+    .back-link:active { transform: scale(0.95); }
 
     /* 内容区占满剩余可视高度，卡片垂直居中 */
     main {
@@ -113,22 +142,24 @@
     article {
       width: 100%;
       max-width: 920px;
-      padding: 76px 84px;
+      padding: 72px 80px;
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
     .meta {
       font-family: var(--mono);
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--muted);
       letter-spacing: .06em;
     }
     h1 {
-      margin: 20px 0 40px;
+      margin: 20px 0 38px;
       font-family: var(--serif);
-      font-size: 56px;
+      font-size: 52px;
       line-height: 1.25;
+      letter-spacing: -.01em;
     }
     .body {
       font-family: var(--serif);
@@ -143,6 +174,7 @@
       flex: none;
       width: 100%;
       padding: 20px 24px;
+      background: var(--panel);
       border-top: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
@@ -151,18 +183,20 @@
       font-size: 11.5px;
       color: var(--muted);
     }
-    footer a { color: var(--accent); text-decoration: none; }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
-      article { padding: 32px 22px; }
+      .topbar { padding: 0 14px; }
+      .brand-sub { display: none; }
+      article { padding: 32px 22px; border-radius: 18px; }
       h1 { font-size: 34px; }
       .body { font-size: 17px; }
       footer { flex-direction: column; gap: 8px; }
     }
   </style>
   <!-- 圆润字体（Chill 圆体，本地自托管） -->
-  <link rel="stylesheet" href="../../src/fonts.css?v=1.2.0" />
+  <link rel="stylesheet" href="../../src/fonts.css?v=1.3.0" />
 </head>
 <body data-page-node-id="VwAY9Ox1xSwmFTFbqjk81X">
   <header class="topbar" data-page-node-id="5XgA4Ezfo1LEQeuYdCmATD">
